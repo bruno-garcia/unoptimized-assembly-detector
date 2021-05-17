@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;net461</TargetFrameworks>
+    <MinClientVersion>2.5</MinClientVersion>
   </PropertyGroup>
 
 </Project>

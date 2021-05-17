@@ -5,4 +5,37 @@
     <TargetFramework>net6.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Reference Include="DebugAsm, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>lib\DebugAsm.dll</HintPath>
+    </Reference>
+    <Reference Include="ReleaseAsm, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>lib\ReleaseAsm.dll</HintPath>
+    </Reference>
+    <!-- https://twitter.com/jeremydmiller/status/777571510919630848 -->
+    <PackageReference Include="structuremap" Version="4.4.0" />
+  </ItemGroup>
+  
+<!--  TODO: Support incremental build with Inputs and Outputs-->
+
+<!--  BeforeTargets=ResolveReferences-->
+  <Target Name="Test" BeforeTargets="Build" DependsOnTargets="ResolveReferences">
+    <ItemGroup>
+      <ReferencedAssemblies Include="@(ReferencePath)" />
+    </ItemGroup>
+    <Message Importance="high" Text="Test target run: $(_ResolvedProjectReferencePaths)"></Message>
+    <Message Importance="high" Text="Test target Reference: $(ReferencedAssemblies)" />
+  </Target>
+
+  <Target Name="GatherReferences" DependsOnTargets="ResolveReferences">
+    <ItemGroup>
+      <MyReferencedAssemblies Include="@(ReferencePath)" />
+    </ItemGroup>
+    
+    <Message Importance="high" Text="Test target Reference: $(MyReferencedAssemblies)" />
+    <Message Importance="high" Text="Test target Reference: @(ReferencePath->'%(ReferenceAssembly)')" />
+    <Message Importance="high" Text="Test target Reference: @(ReferencePath)" />
+
+  </Target>
+  
 </Project>
