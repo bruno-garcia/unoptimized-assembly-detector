@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
@@ -15,27 +15,9 @@
     <!-- https://twitter.com/jeremydmiller/status/777571510919630848 -->
     <PackageReference Include="structuremap" Version="4.4.0" />
   </ItemGroup>
-  
-<!--  TODO: Support incremental build with Inputs and Outputs-->
 
-<!--  BeforeTargets=ResolveReferences-->
-  <Target Name="Test" BeforeTargets="Build" DependsOnTargets="ResolveReferences">
-    <ItemGroup>
-      <ReferencedAssemblies Include="@(ReferencePath)" />
-    </ItemGroup>
-    <Message Importance="high" Text="Test target run: $(_ResolvedProjectReferencePaths)"></Message>
-    <Message Importance="high" Text="Test target Reference: $(ReferencedAssemblies)" />
-  </Target>
-
-  <Target Name="GatherReferences" DependsOnTargets="ResolveReferences">
-    <ItemGroup>
-      <MyReferencedAssemblies Include="@(ReferencePath)" />
-    </ItemGroup>
-    
-    <Message Importance="high" Text="Test target Reference: $(MyReferencedAssemblies)" />
-    <Message Importance="high" Text="Test target Reference: @(ReferencePath->'%(ReferenceAssembly)')" />
-    <Message Importance="high" Text="Test target Reference: @(ReferencePath)" />
-
-  </Target>
+  <ItemGroup>
+    <PackageReference Include="UnoptimizedAssemblyDetector" Version="0.0.1-*" PrivateAssets="All" />
+  </ItemGroup>
   
 </Project>

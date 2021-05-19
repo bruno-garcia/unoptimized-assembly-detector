@@ -1,8 +1,40 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;net461</TargetFrameworks>
-    <MinClientVersion>2.5</MinClientVersion>
+    <TargetFrameworks>netstandard2.0;net471</TargetFrameworks>
+<!--    <MinClientVersion>4.0</MinClientVersion>-->
+    <NoPackageAnalysis>true</NoPackageAnalysis>
+    <BuildOutputTargetFolder>tasks</BuildOutputTargetFolder>
+    <VersionPrefix>0.0.1</VersionPrefix>
+    <VersionSuffix>build$([System.DateTime]::Now.ToString('yyyyMMdd-HHmm'))</VersionSuffix>
+    <PackageOutputPath>../../nupkg</PackageOutputPath>
   </PropertyGroup>
+
+  <Import Project="build\UnoptimizedAssemblyDetector.props"/>
+
+  <ItemGroup>
+    <Content Include="buildMultiTargeting\*">
+      <PackagePath>buildMultiTargeting/</PackagePath>
+    </Content>
+    <Content Include="build\*">
+      <PackagePath>build/</PackagePath>
+    </Content>
+  </ItemGroup>
+
+<!--  <ItemGroup Condition="'$(TargetFramework)' == ''">-->
+<!--    <None Include="$(MSBuildProjectName).props" PackagePath="build" Pack="true"/>-->
+<!--    <None Include="$(MSBuildProjectName).targets" PackagePath="build" Pack="true"/>-->
+<!--    <None Include="..\..\src\UnoptimizedAssemblyDetector.Tasks\UnoptimizedAssemblyDetector.Tasks.targets" PackagePath="build\netcore" Pack="true"/>-->
+<!--    <None Include="..\..\src\UnoptimizedAssemblyDetector.Tasks\UnoptimizedAssemblyDetector.Tasks.targets" PackagePath="build\netfx" Pack="true"/>-->
+<!--    <None Include="..\..\src\UnoptimizedAssemblyDetector.Tasks\bin\$(Configuration)\netstandard2.0\publish\**\*.*" PackagePath="build\netcore" Pack="true"/>-->
+<!--    <None Include="..\..\src\UnoptimizedAssemblyDetector.Tasks\bin\$(Configuration)\net472\publish\**\*.*" PackagePath="build\netfx" Pack="true"/>-->
+<!--  </ItemGroup>-->
+  
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Build.Framework" Version="16.9.0" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.Build.Utilities.Core" Version="16.9.0" PrivateAssets="All" />
+  </ItemGroup>
+  
+  <Import Project="build\UnoptimizedAssemblyDetector.targets"/>
 
 </Project>
