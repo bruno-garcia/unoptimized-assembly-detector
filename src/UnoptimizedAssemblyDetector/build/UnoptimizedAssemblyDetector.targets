@@ -20,4 +20,6 @@
     <Message Importance="high" Text="Test target Reference: $(ReferencedAssemblies)" />
   </Target>
 
+  <UsingTask TaskName="MSBuildTasks.DetectUnoptimizedAssembly" AssemblyFile="$(TaskAssembly)" />
+
 </Project>

@@ -13,3 +13,4 @@ dotnet pack -c release -nologo src/UnoptimizedAssemblyDetector/UnoptimizedAssemb
 
 dotnet restore
 dotnet msbuild /t:MyTest sample/Sample/Sample.csproj 
+dotnet msbuild /t:DetectUnoptimizedAssembly sample/Sample/Sample.csproj 

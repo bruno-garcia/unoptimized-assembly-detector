@@ -13,5 +13,4 @@
     <TaskAssembly>$(MSBuildThisFileDirectory)..\..\tasks\$(TaskFolder)\UnoptimizedAssemblyDetector.dll</TaskAssembly>
   </PropertyGroup>
 
-  <UsingTask TaskName="MSBuildTasks.DetectUnoptimizedAssembly" AssemblyFile="$(TaskAssembly)" />
 </Project>

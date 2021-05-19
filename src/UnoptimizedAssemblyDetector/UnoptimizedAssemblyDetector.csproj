@@ -21,6 +21,11 @@
     </Content>
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Build.Framework" Version="16.9.0" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.Build.Utilities.Core" Version="16.9.0" PrivateAssets="All" />
+  </ItemGroup>
+
 <!--  <ItemGroup Condition="'$(TargetFramework)' == ''">-->
 <!--    <None Include="$(MSBuildProjectName).props" PackagePath="build" Pack="true"/>-->
 <!--    <None Include="$(MSBuildProjectName).targets" PackagePath="build" Pack="true"/>-->
