@@ -2,22 +2,34 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFrameworks>net6.0;net48</TargetFrameworks>
+    <TargetFrameworks>netcoreapp2.1;net461</TargetFrameworks>
   </PropertyGroup>
 
   <ItemGroup>
-    <Reference Include="DebugAsm, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>lib\DebugAsm.dll</HintPath>
-    </Reference>
-    <Reference Include="ReleaseAsm, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>lib\ReleaseAsm.dll</HintPath>
-    </Reference>
     <!-- https://twitter.com/jeremydmiller/status/777571510919630848 -->
     <PackageReference Include="structuremap" Version="4.4.0" />
+  </ItemGroup>
+  
+  <ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp2.1'">
+    <Reference Include="EmptyLibRelease, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>lib\netstandard2.0\EmptyLibRelease.dll</HintPath>
+    </Reference>
+    <Reference Include="EmptyLibDebug, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>lib\netstandard2.0\EmptyLibDebug.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net461'">
+    <Reference Include="EmptyLibRelease, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>lib\net461\EmptyLibRelease.dll</HintPath>
+    </Reference>
+    <Reference Include="EmptyLibDebug, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>lib\net461\EmptyLibDebug.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="UnoptimizedAssemblyDetector" Version="$(UnoptimizedAssemblyDetectorVersionPrefix)-*" PrivateAssets="All" />
   </ItemGroup>
-  
+
 </Project>
