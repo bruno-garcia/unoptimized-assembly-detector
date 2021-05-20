@@ -1,4 +1,5 @@
 # Unoptimized Assembly Detector
+[![build](https://github.com/bruno-garcia/unoptimized-assembly-detector/workflows/ci/badge.svg?branch=main)](https://github.com/bruno-garcia/unoptimized-assembly-detector/actions?query=branch%3Aci)
 [![NuGet](https://img.shields.io/nuget/v/UnoptimizedAssemblyDetector.svg)](https://www.nuget.org/packages/UnoptimizedAssemblyDetector)
 
 A NuGet package that detects when assemblies compiled without the `-optimized` flag are added to a project and warns you about it.
@@ -29,9 +30,9 @@ roll back to an older version or chose another dependency.
 
 ## Acknowledgements
 
-Icon made by Freepik from [www.flaticon.com](www.flaticon.com).
-
-Blog posts that helped:
-* [Implementing and Debugging Custom MSBuild Tasks](https://ithrowexceptions.com/2020/08/04/implementing-and-debugging-custom-msbuild-tasks.html) by Matthias Koch.
-* [Shipping a cross-platform MSBuild task in a NuGet package](https://natemcmaster.com/blog/2017/07/05/msbuild-task-in-nuget/) by Nate MacMaster.
-* [Tyrrz](https://github.com/Tyrrrz) for the links and rants.
+* [Sentry](https://sentry.io/for/dot-net/) for the [craft](https://github.com/getsentry/craft) release tool used in this project.
+* Icon made by Freepik from [www.flaticon.com](https://www.flaticon.com).
+* Some of the blog posts that helped:
+  * [Implementing and Debugging Custom MSBuild Tasks](https://ithrowexceptions.com/2020/08/04/implementing-and-debugging-custom-msbuild-tasks.html) by Matthias Koch.
+  * [Shipping a cross-platform MSBuild task in a NuGet package](https://natemcmaster.com/blog/2017/07/05/msbuild-task-in-nuget/) by Nate MacMaster.
+  * [Tyrrz](https://github.com/Tyrrrz) for the links and rants.
