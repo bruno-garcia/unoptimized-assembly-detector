@@ -9,12 +9,9 @@
 
   <!--  TODO: Support incremental build with Inputs and Outputs-->
   <Target Name="WarnOnUnoptimizedAssembly" BeforeTargets="Build" DependsOnTargets="ResolveReferences">
-    <ItemGroup>
-      <ReferencedAssemblies Include="@(ReferencePath)" />
-    </ItemGroup>
-    <DetectUnoptimizedAssembly>
-    </DetectUnoptimizedAssembly>
-    <Message Importance="high" Text="Test target Reference: @(ReferencedAssemblies)" />
+<!--          Inputs="@(ReferencePath)" Outputs="@(IntermediateOutputPath)/UnoptimizedAssemblyDetector/files.json">-->
+
+    <DetectUnoptimizedAssembly ReferencePath="@(ReferencePath)" AssemblyName="$(AssemblyName)" />
   </Target>
 
 </Project>
