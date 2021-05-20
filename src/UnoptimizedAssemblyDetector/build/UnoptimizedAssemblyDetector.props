@@ -1,16 +1,9 @@
-<Project>
-<!--<?xml version="1.0" encoding="utf-8"?>-->
-<!--<Project TreatAsLocalProperty="TaskFolder;TaskAssembly" ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">-->
-
-<!--  <PropertyGroup>-->
-<!--    <CustomTaskContinueOnError>False</CustomTaskContinueOnError>-->
-<!--    <CustomTaskStringParameter>Default</CustomTaskStringParameter>-->
-<!--  </PropertyGroup>-->
+<?xml version="1.0" encoding="utf-8"?>
+<Project TreatAsLocalProperty="TaskFolder" ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 
   <PropertyGroup>
     <TaskFolder Condition=" '$(MSBuildRuntimeType)' == 'Core' ">netstandard2.0</TaskFolder>
     <TaskFolder Condition=" '$(MSBuildRuntimeType)' != 'Core' ">net472</TaskFolder>
-    <TaskAssembly>$(MSBuildThisFileDirectory)..\..\tasks\$(TaskFolder)\UnoptimizedAssemblyDetector.dll</TaskAssembly>
   </PropertyGroup>
 
 </Project>

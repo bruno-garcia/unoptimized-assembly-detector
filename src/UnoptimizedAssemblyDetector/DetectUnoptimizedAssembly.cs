@@ -1,10 +1,7 @@
-using System;
-using System.Runtime.InteropServices;
 using Microsoft.Build.Framework;
 using MSBuildTask = Microsoft.Build.Utilities.Task;
 
-// ReSharper disable once CheckNamespace
-namespace MSBuildTasks
+namespace UnoptimizedAssemblyDetector
 {
     public class DetectUnoptimizedAssembly : MSBuildTask
     {

@@ -1,5 +1,4 @@
 #!/bin/bash
-
 set -eu
 
 rm -rf ~/.nuget/packages/unoptimizedassemblydetector/
@@ -9,8 +8,8 @@ dotnet clean
 
 dotnet pack -c release -nologo src/UnoptimizedAssemblyDetector/UnoptimizedAssemblyDetector.csproj
 
-# dotnet msbuild /t:DetectUnoptimizedAssembly sample/Sample/Sample.csproj
+dotnet build -f net6.0 sample/Sample/Sample.csproj
 
-dotnet restore
-dotnet msbuild /t:MyTest sample/Sample/Sample.csproj 
-dotnet msbuild /t:DetectUnoptimizedAssembly sample/Sample/Sample.csproj 
+# .NET Framework MSBuild:
+# msbuild /t:Build /p:TargetFrameworkVersion=v4.8 sample/Sample/Sample.csproj
+

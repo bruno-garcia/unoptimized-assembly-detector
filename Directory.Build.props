@@ -5,6 +5,7 @@
     <Deterministic>true</Deterministic>
     <Features>strict</Features>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <UnoptimizedAssemblyDetectorVersionPrefix>0.0.1</UnoptimizedAssemblyDetectorVersionPrefix>
   </PropertyGroup>
 
   <ItemGroup>

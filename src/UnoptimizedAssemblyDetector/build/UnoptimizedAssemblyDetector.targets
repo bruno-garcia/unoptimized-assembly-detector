@@ -1,25 +1,20 @@
-<Project>
-  <!--<?xml version="1.0" encoding="utf-8"?>-->
-<!--  <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">-->
+<?xml version="1.0" encoding="utf-8"?>
+<Project TreatAsLocalProperty="TaskAssembly" ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <PropertyGroup>
+    <TaskAssembly>$(MSBuildThisFileDirectory)..\tasks\$(TaskFolder)\UnoptimizedAssemblyDetector.dll</TaskAssembly>
+  </PropertyGroup>
+
+  <UsingTask TaskName="UnoptimizedAssemblyDetector.DetectUnoptimizedAssembly" AssemblyFile="$(TaskAssembly)" />
 
   <!--  TODO: Support incremental build with Inputs and Outputs-->
-
-<!--  <Target Name="DetectUnoptimizedAssembly" BeforeTargets="Build" DependsOnTargets="ResolveReferences">-->
-<!--    <ItemGroup>-->
-<!--      <ReferencedAssemblies Include="@(ReferencePath)" />-->
-<!--    </ItemGroup>-->
-<!--    <Message Importance="high" Text="Test target Reference: $(ReferencedAssemblies)" />-->
-<!--  </Target>-->
-
-  <Target Name="MyTest">
-    <Message Importance="high" Text="Target MyTest" />
-    <Message Importance="high" Condition="Exists($(TaskAssembly))" Text="Task assembly not found: $(TaskAssembly)" />
+  <Target Name="WarnOnUnoptimizedAssembly" BeforeTargets="Build" DependsOnTargets="ResolveReferences">
     <ItemGroup>
       <ReferencedAssemblies Include="@(ReferencePath)" />
     </ItemGroup>
-    <Message Importance="high" Text="Test target Reference: $(ReferencedAssemblies)" />
+    <DetectUnoptimizedAssembly>
+    </DetectUnoptimizedAssembly>
+    <Message Importance="high" Text="Test target Reference: @(ReferencedAssemblies)" />
   </Target>
-
-  <UsingTask TaskName="MSBuildTasks.DetectUnoptimizedAssembly" AssemblyFile="$(TaskAssembly)" />
 
 </Project>
