@@ -6,6 +6,14 @@ A NuGet package that detects when assemblies compiled without the `-optimized` f
 
 This project hooks into the build process and detects if any referenced assembly was compiled in debug mode.
 
+### Add to your project:
+
+```xml
+<ItemGroup>
+  <PackageReference Include="UnoptimizedAssemblyDetector" Version="0.0.2" PrivateAssets="All" />
+</ItemGroup>
+```
+
 ## Motivation
 
 It's surprising to many that `dotnet publish` compiles assemblies in **debug** mode.
