@@ -1,4 +1,5 @@
 # Unoptimized Assembly Detector
+[![NuGet](https://img.shields.io/nuget/v/UnoptimizedAssemblyDetector.svg)](https://www.nuget.org/packages/UnoptimizedAssemblyDetector)
 
 A NuGet package that detects when assemblies compiled without the `-optimized` flag are added to a project and warns you about it.
 
@@ -10,7 +11,7 @@ This project hooks into the build process and detects if any referenced assembly
 
 ```xml
 <ItemGroup>
-  <PackageReference Include="UnoptimizedAssemblyDetector" Version="0.0.3" PrivateAssets="All" />
+  <PackageReference Include="UnoptimizedAssemblyDetector" Version="0.0.4" PrivateAssets="All" />
 </ItemGroup>
 ```
 
@@ -25,3 +26,12 @@ It can warn any referened assembly, not only added through NuGet.
 Now that you know about it, you can  communicate to the author of the dependency. 
 Wait until a fix is shipped, you can ignore the warning for said package, 
 roll back to an older version or chose another dependency.
+
+## Acknowledgements
+
+Icon made by Freepik from [www.flaticon.com](www.flaticon.com).
+
+Blog posts that helped:
+* [Implementing and Debugging Custom MSBuild Tasks](https://ithrowexceptions.com/2020/08/04/implementing-and-debugging-custom-msbuild-tasks.html) by Matthias Koch.
+* [Shipping a cross-platform MSBuild task in a NuGet package](https://natemcmaster.com/blog/2017/07/05/msbuild-task-in-nuget/) by Nate MacMaster.
+* [Tyrrz](https://github.com/Tyrrrz) for the links and rants.

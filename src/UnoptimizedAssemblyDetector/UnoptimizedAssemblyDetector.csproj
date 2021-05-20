@@ -18,6 +18,7 @@
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
     <DebugType>embedded</DebugType>
     <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageIcon>unoptimized.png</PackageIcon>
   </PropertyGroup>
 
   <ItemGroup>
@@ -30,14 +31,25 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)../../.github/unoptimized.png" Pack="true" PackagePath=""/>
     <None Include="$(MSBuildThisFileDirectory)../../README.md" Pack="true" PackagePath=""/>
   </ItemGroup>
+
+  <PropertyGroup>
+    <ChangelogFile>$(SolutionDir)/CHANGELOG.md</ChangelogFile>
+    <AppendToReleaseNotesProperty>
+      <![CDATA[-->
+      See full changelog at https://github.com/bruno-garcia/unoptimized-assembly-detector/blob/main/CHANGELOG.md]]>
+    </AppendToReleaseNotesProperty>
+    <VersionRegex>^## (.+)</VersionRegex>
+  </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="System.Reflection.Metadata" Version="5.0.0" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="SIL.ReleaseTasks" Version="2.5.0" PrivateAssets="All" Condition="'$(Configuration)' != 'Debug'"/>
     <PackageReference Include="Microsoft.Build.Framework" Version="16.9.0" PrivateAssets="All" />
     <PackageReference Include="Microsoft.Build.Utilities.Core" Version="16.9.0" PrivateAssets="All" />
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.0-beta-20204-02" PrivateAssets="All" />
