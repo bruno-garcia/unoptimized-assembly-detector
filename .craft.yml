@@ -1,0 +1,12 @@
+minVersion: '0.13.2'
+github:
+  owner: bruno-garcia
+  repo: unoptimized-assembly-detector
+changelogPolicy: auto
+statusProvider:
+  name: github
+artifactProvider:
+  name: github
+targets:
+  - name: nuget
+  - name: github

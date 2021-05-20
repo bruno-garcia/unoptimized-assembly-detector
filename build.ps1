@@ -2,7 +2,7 @@ $ErrorActionPreference = "Stop"
 
 Remove-Item -Force -Recurse -ErrorAction SilentlyContinue $env:USERPROFILE\.nuget\packages\unoptimizedassemblydetector\
 Remove-Item -Force -Recurse -ErrorAction SilentlyContinue $env:USERPROFILE\nuget-local-feed\packages\unoptimizedassemblydetector\
-Remove-Item .\nupkg\*.nupkg
+Remove-Item .\nupkg\*.nupkg -ErrorAction SilentlyContinue 
 
 dotnet pack -c release -nologo src/UnoptimizedAssemblyDetector/UnoptimizedAssemblyDetector.csproj
 

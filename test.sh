@@ -1,7 +1,7 @@
 #!/bin/bash
 set -eu
 
-# ./build.sh
+./build.sh
 
 test() {
   if ! echo $1 | grep "warning : Unoptimized assembly detected: 'EmptyLibDebug.dll'"
