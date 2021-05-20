@@ -17,6 +17,7 @@
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
     <DebugType>embedded</DebugType>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -29,7 +30,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="$(MSBuildThisFileDirectory)/../../README.md" Pack="true" PackagePath=""/>
+    <None Include="$(MSBuildThisFileDirectory)../../README.md" Pack="true" PackagePath=""/>
   </ItemGroup>
 
   <ItemGroup>

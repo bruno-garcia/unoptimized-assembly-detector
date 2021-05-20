@@ -1,6 +1,6 @@
 # Unoptimized Assembly Detector
 
-A NuGet package that detects when assemblies compiled without the `-optimized` flag are added to a project warns you about it.
+A NuGet package that detects when assemblies compiled without the `-optimized` flag are added to a project and warns you about it.
 
 ## How does it work?
 
@@ -10,13 +10,13 @@ This project hooks into the build process and detects if any referenced assembly
 
 ```xml
 <ItemGroup>
-  <PackageReference Include="UnoptimizedAssemblyDetector" Version="0.0.2" PrivateAssets="All" />
+  <PackageReference Include="UnoptimizedAssemblyDetector" Version="0.0.3" PrivateAssets="All" />
 </ItemGroup>
 ```
 
 ## Motivation
 
-It's surprising to many that `dotnet publish` compiles assemblies in **debug** mode.
+It's surprising to many that `dotnet publish` and `dotnet pack` compile assemblies in **debug** mode.
 This means that unless you've specified `-c release`, you're building .NET assemblies without the `-optimize` compiler flag.
 
 With this package, you can get warned if one of your dependencies is being built in `Debug` mode and published to `nuget.org`. 
