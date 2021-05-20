@@ -8,3 +8,4 @@ OLD_VERSION="$1"
 NEW_VERSION="$2"
 
 sed -i '' -e "1,/<Version>/ s!<Version>.*</Version>!<Version>$NEW_VERSION</Version>!" src/UnoptimizedAssemblyDetector/UnoptimizedAssemblyDetector.csproj
+sed -i '' -e 's,Version="[^"]*",Version="'$NEW_VERSION'",g' README.md
