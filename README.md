@@ -1,4 +1,5 @@
 # Unoptimized Assembly Detector
+[![build](https://github.com/bruno-garcia/unoptimized-assembly-detector/workflows/ci/badge.svg?branch=main)](https://github.com/bruno-garcia/unoptimized-assembly-detector/actions?query=branch%3Aci)
 [![NuGet](https://img.shields.io/nuget/v/UnoptimizedAssemblyDetector.svg)](https://www.nuget.org/packages/UnoptimizedAssemblyDetector)
 
 A NuGet package that detects when assemblies compiled without the `-optimized` flag are added to a project and warns you about it.
