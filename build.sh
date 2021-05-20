@@ -13,6 +13,4 @@ dotnet build -c release -f net461 sample/Sample/Sample.csproj
 dotnet build -c release -f netcoreapp2.1 sample/Sample/Sample.csproj
 
 # .NET Framework MSBuild:
-# msbuild /t:Restore;Build /p:Configuration=Release /p:TargetFrameworkVersion=v4.6.1 sample/Sample/Sample.csproj
-
-
+# msbuild /t:Restore;Build /p:Configuration=Release /p:TargetFrameworks=net461 sample/Sample/Sample.csproj
