@@ -5,8 +5,6 @@
     <MinClientVersion>4.0</MinClientVersion>
     <NoPackageAnalysis>true</NoPackageAnalysis>
     <BuildOutputTargetFolder>tasks</BuildOutputTargetFolder>
-    <VersionPrefix>$(UnoptimizedAssemblyDetectorVersionPrefix)</VersionPrefix>
-    <VersionSuffix>build$([System.DateTime]::Now.ToString('yyyyMMdd-HHmm'))</VersionSuffix>
     <PackageOutputPath>../../nupkg</PackageOutputPath>
     <Authors>Bruno Garcia</Authors>
     <PackageTags>Performance;Diagnostics</PackageTags>
@@ -19,6 +17,15 @@
     <DebugType>embedded</DebugType>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageIcon>unoptimized.png</PackageIcon>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(CraftRelease)' != 'true'">
+    <VersionPrefix>$(UnoptimizedAssemblyDetectorVersionPrefix)</VersionPrefix>
+    <VersionSuffix>build$([System.DateTime]::Now.ToString('yyyyMMdd-HHmm'))</VersionSuffix>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(CraftRelease)' == 'true'">
+    <!-- Version published to NuGet is controlled here. -->
+    <Version>0.0.4</Version>
   </PropertyGroup>
 
   <ItemGroup>
