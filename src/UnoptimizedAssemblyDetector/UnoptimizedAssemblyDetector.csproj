@@ -8,6 +8,15 @@
     <VersionPrefix>$(UnoptimizedAssemblyDetectorVersionPrefix)</VersionPrefix>
     <VersionSuffix>build$([System.DateTime]::Now.ToString('yyyyMMdd-HHmm'))</VersionSuffix>
     <PackageOutputPath>../../nupkg</PackageOutputPath>
+    <Authors>Bruno Garcia</Authors>
+    <PackageTags>Performance;Diagnostics</PackageTags>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryRoot>$(MSBuildThisFileDirectory)</RepositoryRoot>
+    <RepositoryUrl>https://github.com/bruno-garcia/unoptimized-assembly-detector</RepositoryUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <DebugType>embedded</DebugType>
   </PropertyGroup>
 
   <ItemGroup>
@@ -20,14 +29,17 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Build.Utilities.Core" Version="16.9.0" CopyLocal="false" Publish="false" ExcludeAssets="runtime" />
-    <PackageReference Include="Microsoft.Build.Framework" Version="16.9.0" CopyLocal="false" Publish="false" ExcludeAssets="runtime" />
+    <None Include="$(MSBuildThisFileDirectory)/../../README.md" Pack="true" PackagePath=""/>
+  </ItemGroup>
+  
+  <ItemGroup>
     <PackageReference Include="System.Reflection.Metadata" Version="5.0.0" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Build.Framework" Version="16.9.0" PrivateAssets="All" />
     <PackageReference Include="Microsoft.Build.Utilities.Core" Version="16.9.0" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.0-beta-20204-02" PrivateAssets="All" />
   </ItemGroup>
   
 </Project>

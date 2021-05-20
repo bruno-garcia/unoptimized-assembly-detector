@@ -6,19 +6,6 @@
     <Features>strict</Features>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <UnoptimizedAssemblyDetectorVersionPrefix>0.0.1</UnoptimizedAssemblyDetectorVersionPrefix>
-
-    <Authors>Bruno Garcia</Authors>
-
-    <PackageTags>Performance;Diagnostics</PackageTags>
-    <RepositoryType>git</RepositoryType>
-    <RepositoryRoot>$(MSBuildThisFileDirectory)</RepositoryRoot>
-    <RepositoryUrl>https://github.com/bruno-garcia/unoptimized-assembly-detector</RepositoryUrl>
-
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
-
-    <PublishRepositoryUrl>true</PublishRepositoryUrl>
-    <EmbedUntrackedSources>true</EmbedUntrackedSources>
-    <DebugType>embedded</DebugType>
   </PropertyGroup>
 
   <ItemGroup>
