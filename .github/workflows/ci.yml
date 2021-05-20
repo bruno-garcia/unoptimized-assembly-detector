@@ -32,11 +32,3 @@ jobs:
 
         - name: Build and test
           run: ${{ matrix.test_script }}
-
-        - name: Archive Artifacts
-          if: matrix.os == 'windows-latest'
-          uses: actions/upload-artifact@v2
-          with:
-            name: ${{ github.sha }}
-            path: |
-              ${{ github.workspace }}/nupkg/*.nupkg
