@@ -8,10 +8,15 @@
   <UsingTask TaskName="UnoptimizedAssemblyDetector.DetectUnoptimizedAssembly" AssemblyFile="$(TaskAssembly)" />
 
   <!--  TODO: Support incremental build with Inputs and Outputs-->
-  <Target Name="WarnOnUnoptimizedAssembly" BeforeTargets="Build" DependsOnTargets="ResolveReferences">
+  <Target Name="WarnOnUnoptimizedAssembly" AfterTargets="ResolveReferences" DependsOnTargets="ResolveReferences">
 <!--          Inputs="@(ReferencePath)" Outputs="@(IntermediateOutputPath)/UnoptimizedAssemblyDetector/files.json">-->
 
-    <DetectUnoptimizedAssembly ReferencePath="@(ReferencePath)" AssemblyName="$(AssemblyName)" />
+    <DetectUnoptimizedAssembly
+      ReferencePath="@(ReferencePath)"
+      AssemblyName="$(AssemblyName)"
+      Configuration="$(Configuration)"
+      ProjectDirectory="$(MSBuildProjectDirectory)"
+    />
   </Target>
 
 </Project>
