@@ -27,6 +27,9 @@ jobs:
         - name: Checkout
           uses: actions/checkout@v2.3.3
 
+        - uses: microsoft/setup-msbuild@v1.0.2
+          if: matrix.os == 'windows-latest'
+
         - name: Build and test
           run: ${{ matrix.test_script }}
 
