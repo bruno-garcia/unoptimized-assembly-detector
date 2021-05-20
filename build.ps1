@@ -1,5 +1,7 @@
 $ErrorActionPreference = "Stop"
 
+New-Item "nupkg" -ItemType Directory -ErrorAction SilentlyContinue
+
 Remove-Item -Force -Recurse -ErrorAction SilentlyContinue $env:USERPROFILE\.nuget\packages\unoptimizedassemblydetector\
 Remove-Item -Force -Recurse -ErrorAction SilentlyContinue $env:USERPROFILE\nuget-local-feed\packages\unoptimizedassemblydetector\
 Remove-Item .\nupkg\*.nupkg -ErrorAction SilentlyContinue 
