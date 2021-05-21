@@ -7,6 +7,7 @@
     <BuildOutputTargetFolder>tasks</BuildOutputTargetFolder>
     <PackageOutputPath>../../nupkg</PackageOutputPath>
     <Authors>Bruno Garcia</Authors>
+    <Description>Build tool that hooks into msbuild and warns you when assemblies compiled without the -optimized flag are added to a project.</Description>
     <PackageTags>Performance;Diagnostics</PackageTags>
     <RepositoryType>git</RepositoryType>
     <RepositoryRoot>$(MSBuildThisFileDirectory)</RepositoryRoot>

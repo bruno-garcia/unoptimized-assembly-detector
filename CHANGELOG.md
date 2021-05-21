@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- Description to nuget package
+
 ## 0.0.5
 
 - Fixed conflict with Microsoft.Build.Utilities.Core
