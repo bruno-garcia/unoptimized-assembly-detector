@@ -3,6 +3,7 @@
 ## Unreleased
 
 - Description to nuget package
+- Gif to readme showing how it works
 
 ## 0.0.5
 
