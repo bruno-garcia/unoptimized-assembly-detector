@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 0.0.5
 
 - Fixed conflict with Microsoft.Build.Utilities.Core
 - Added a logo to nuget package and acknowledgment to readme
