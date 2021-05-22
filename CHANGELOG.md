@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 0.1.0
 
 - Description to nuget package
 - Gif to readme showing how it works
