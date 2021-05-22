@@ -16,7 +16,7 @@ This project hooks into the build process and detects if any referenced assembly
 
 ```xml
 <ItemGroup>
-  <PackageReference Include="UnoptimizedAssemblyDetector" Version="0.0.5" PrivateAssets="All" />
+  <PackageReference Include="UnoptimizedAssemblyDetector" Version="0.1.0" PrivateAssets="All" />
 </ItemGroup>
 ```
 
