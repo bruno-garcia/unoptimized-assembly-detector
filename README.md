@@ -10,7 +10,7 @@ NuGet package that detects when assemblies compiled without the `-optimized` fla
 
 This project hooks into the build process and detects if any referenced assembly was [compiled in _Debug_ mode](https://github.com/dotnet/runtime/blob/b9b876ab510e98ac741f1c82f1cb4fb1cb21e3ef/src/libraries/System.Private.CoreLib/src/System/Diagnostics/DebuggableAttribute.cs#L22). 
 
-![UnoptimizedAssemblyDetector in action](.github/unoptimized-assembly-detected.gif)
+![UnoptimizedAssemblyDetector in action](https://raw.githubusercontent.com/bruno-garcia/unoptimized-assembly-detector/main/.github/unoptimized-assembly-detected.gif)
 
 ### Add to your project:
 
