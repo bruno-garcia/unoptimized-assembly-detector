@@ -27,7 +27,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(CraftRelease)' == 'true'">
     <!-- Version published to NuGet is controlled here. -->
-    <Version>0.1.0</Version>
+    <Version>0.1.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
