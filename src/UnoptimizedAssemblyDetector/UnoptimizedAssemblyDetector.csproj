@@ -18,6 +18,7 @@
     <DebugType>embedded</DebugType>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageIcon>unoptimized.png</PackageIcon>
+    <DevelopmentDependency>true</DevelopmentDependency>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(CraftRelease)' != 'true'">
