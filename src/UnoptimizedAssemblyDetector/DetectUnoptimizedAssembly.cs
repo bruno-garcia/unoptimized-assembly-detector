@@ -99,14 +99,14 @@ namespace UnoptimizedAssemblyDetector
 
                 try
                 {
-                    solutionDirectoryInfo = solutionDirectoryInfo.Parent;
-                    if (!solutionDirectoryInfo.Exists)
+                    if (solutionDirectoryInfo.Parent is null || !solutionDirectoryInfo.Parent.Exists)
                     {
                         solutionDirectoryInfo = projectDirectoryInfo;
                         Log.LogMessage(MessageImportance.Low, "No solution found, use the project directory: {0}",
                             solutionDirectoryInfo.FullName);
                         break;
                     }
+                    solutionDirectoryInfo = solutionDirectoryInfo.Parent;
                 }
                 catch (SecurityException)
                 {

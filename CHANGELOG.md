@@ -1,5 +1,10 @@
 # Changelog
 
+# Unreleased
+
+- Set DevelopmentDependency to true (#2)
+- Make sure .Parent directory isn't null (#3)
+
 ## 0.1.0
 
 - Description to nuget package
