@@ -32,6 +32,8 @@ Now that you know about it, you can  communicate to the author of the dependency
 Wait until a fix is shipped, you can ignore the warning for said package, 
 roll back to an older version or chose another dependency.
 
+I wrote [a blog post](https://garcia.in/posts/2021/pitfalls-of-unoptimized-nuget-packages/) that goes into more details on the topic.
+
 ## Acknowledgements
 
 * [Sentry](https://sentry.io/for/dot-net/) for the [craft](https://github.com/getsentry/craft) release tool used in this project.
